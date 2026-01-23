@@ -6,7 +6,7 @@
   --text-tertiary: #666;
   --text-quaternary: #aaa;
   --border-color: #eee;
-  --accent-color: #00ca62;
+  --accent-color: #00d46a;
   --modal-overlay: rgba(0, 0, 0, 0.65);
 }
 
@@ -18,7 +18,7 @@
   --text-tertiary: #999;
   --text-quaternary: #777;
   --border-color: #333;
-  --accent-color: #00ca62;
+  --accent-color: #00d46a;
   --modal-overlay: rgba(0, 0, 0, 0.85);
 }
 
@@ -63,7 +63,7 @@ h1 {
 
 h2 {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: var(--text-secondary);
 }
@@ -95,7 +95,7 @@ ol {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 260px;
   height: 100vh;
   border-right: 1px solid var(--border-color);
   background-color: var(--bg-secondary);
@@ -135,7 +135,7 @@ ol {
 
 /* 콘텐츠 영역 */
 .content {
-  margin-left: 250px;
+  margin-left: 260px;
   padding: 0 0 2.5rem;
   min-width: 960px;
   flex: 1;
@@ -146,12 +146,12 @@ ol {
 
 .content > * {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1450px;
   padding: 0 4rem 20rem;
 }
 
 .sub-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .sub-title sup {
@@ -163,7 +163,7 @@ ol {
 /* projects */
 #title {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1450px;
   padding: 3rem 4rem 0;
 }
 
@@ -200,15 +200,20 @@ ol {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .thumb-datamenity {
   width: 100%;
   height: 350px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
   position: relative;
   overflow: hidden;
+  border-radius: 0 12px 12px 12px;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .thumb-datamenity::before {
@@ -219,14 +224,45 @@ ol {
   transform: scale(1);
   transform-origin: center;
   transition: transform 0.5s ease;
+  border-radius: 0 12px 12px 12px;
+}
+
+.project-thumb {
+  position: relative;
+  padding-top: 28px;
+}
+
+.project-thumb .folder-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  padding: 0 12px;
+  background: #d9f7e8;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #00d46a;
+  z-index: 2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .thumb-heyvoca {
   width: 100%;
   height: 350px;
   margin-bottom: 0.8rem;
+  margin-top: 0;
   position: relative;
   overflow: hidden;
+  border-radius: 0 12px 12px 12px;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .thumb-heyvoca::before {
@@ -237,14 +273,21 @@ ol {
   transform: scale(1);
   transform-origin: center;
   transition: transform 0.5s ease;
+  border-radius: 0 12px 12px 12px;
 }
+
 
 .thumb-heroworks {
   width: 100%;
   height: 350px;
   margin-bottom: 0.8rem;
+  margin-top: 0;
   position: relative;
   overflow: hidden;
+  border-radius: 0 12px 12px 12px;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .thumb-heroworks::before {
@@ -255,12 +298,20 @@ ol {
   transform: scale(1);
   transform-origin: center;
   transition: transform 0.5s ease;
+  border-radius: 0 12px 12px 12px;
 }
+
 
 .project-thumb:hover .thumb-datamenity::before,
 .project-thumb:hover .thumb-heyvoca::before,
 .project-thumb:hover .thumb-heroworks::before {
   transform: scale(1.05);
+}
+
+.project-thumb:hover .thumb-datamenity,
+.project-thumb:hover .thumb-heyvoca,
+.project-thumb:hover .thumb-heroworks {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .project-thumb p {
@@ -421,6 +472,75 @@ ol {
   }
 }
 
+/* Resolution Notice Modal */
+.resolution-modal {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  width: 260px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  padding: 0 1.6rem;
+}
+
+.resolution-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.resolution-modal-content {
+  position: relative;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 1.2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resolution-modal-content p {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.resolution-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  border-radius: 4px;
+}
+
+.resolution-modal-close:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.resolution-modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* about me */
 .aboutme-wrap {
   font-size: 1rem;
@@ -450,6 +570,7 @@ ol {
   width: 100%;
   display: block;
   margin-bottom: 0;
+  border-radius: 12px;
 }
 
 .profile-img {
@@ -509,7 +630,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 230px;
+  width: 250px;
   justify-content: center;
 }
 
@@ -538,7 +659,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 5rem;
   padding: 0.7rem 0 0.5rem;
   border-bottom: 1px solid var(--border-color);
   transition: border-color 0.3s ease;
@@ -687,7 +808,7 @@ ol {
   transition: all 0.3s ease;
   align-self: flex-end;
   margin-left: auto;
-  border-radius: 25px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;

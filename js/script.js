@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // 타이틀 타이핑 애니메이션
   // ===============================
-  const text = "2026 Portfolio";
+  const text = "2026 Portf()lio";
   const target = document.getElementById("text");
   const cursor = document.getElementById("cursor");
 
@@ -298,5 +298,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const firstSectionId = sections[0].getAttribute("id");
       setActiveNavSup(firstSectionId);
     }
+  }
+
+  // ===============================
+  // 해상도 안내 모달
+  // ===============================
+  const resolutionModal = document.getElementById("resolutionModal");
+  const resolutionModalClose = document.getElementById("resolutionModalClose");
+
+  // 페이지 로드 시 모달 표시
+  if (resolutionModal) {
+    setTimeout(() => {
+      resolutionModal.classList.add("active");
+    }, 500);
+  }
+
+  // X 버튼 클릭 시 모달 닫기
+  if (resolutionModalClose) {
+    resolutionModalClose.addEventListener("click", () => {
+      if (resolutionModal) {
+        resolutionModal.classList.remove("active");
+      }
+    });
   }
 });
