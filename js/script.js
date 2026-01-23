@@ -158,8 +158,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     }
 
-    overlay && overlay.addEventListener("click", closeModal);
+    // 오버레이 클릭 시 모달 닫기
+    overlay && overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closeModal();
+      }
+    });
+    
+    // 뒤로가기 버튼 클릭 시 모달 닫기
     backBtn && backBtn.addEventListener("click", closeModal);
+    
+    // 모달 콘텐츠 클릭 시 이벤트 전파 방지 (모달이 닫히지 않도록)
+    const modalContent = modal.querySelector(".modal-content");
+    if (modalContent) {
+      modalContent.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    }
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
