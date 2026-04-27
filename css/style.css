@@ -1,13 +1,14 @@
 :root {
-  --bg-primary: #feffd9;
-  --bg-secondary: #fafafa;
+  /* Warm mint palette (slightly more yellow-toned) */
+  --bg-primary: #e1efe7; /* warm mint */
+  --bg-secondary: #f7fcf1; /* lighter warm mint for surfaces */
   --text-primary: #111;
   --text-secondary: #111;
   --text-tertiary: #111;
   --text-quaternary: #555;
-  --border-color: #111;
+  --border-color: #111; /* deep green-black */
   --gauge-track: rgba(0, 0, 0, 0.12);
-  --accent-color: #6b5f3a;
+  --accent-color: #475d50;
   --modal-overlay: rgba(0, 0, 0, 0.65);
   --top-nav-height: 35.5px;
   --top-nav-offset: 10px;
@@ -24,7 +25,7 @@
   --text-quaternary: #aaa;
   --border-color: #eaeaea;
   --gauge-track: rgba(255, 255, 255, 0.15);
-  --accent-color: #cbbf9a;
+  --accent-color: #475d50;
   --modal-overlay: rgba(0, 0, 0, 0.85);
   --ink: #eaeaea;
 }
@@ -38,7 +39,7 @@
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
-  background: var(--bg-primary);
+  background: linear-gradient(150deg, #e1efe7 0%, #badbce 100%) fixed;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -123,7 +124,7 @@ ol {
   right: 0;
   height: var(--top-nav-height);
   z-index: 1100;
-  background: var(--bg-primary);
+  background: linear-gradient(150deg, #e1efe7 0%, #badbce 100%) fixed;
   border: 1px solid var(--ink);
   transition:
     background-color 0.3s ease,
@@ -282,7 +283,7 @@ ol {
 }
 
 .sub-title sup {
-  color: var(--accent-color);
+  color: var(--ink);
   font-size: 0.85rem;
   font-weight: 400;
 }
