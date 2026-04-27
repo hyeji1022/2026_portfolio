@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,13 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Raleway:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <!-- 다크모드 토글 버튼 -->
+    <!-- 상단 네비게이션 -->
+    <nav class="top-nav" aria-label="Primary">
+      <div class="top-nav-inner">
+        <ul class="top-nav-links">
+          <li>
+            <a href="#works">Works <sup>01</sup></a>
+          </li>
+          <li>
+            <a href="#about-me">About me <sup>02</sup></a>
+          </li>
+          <li>
+            <a href="#contact">Contact <sup>03</sup></a>
+          </li>
+        </ul>
+
+        <div class="top-nav-title">
+          <a href="#works">2026 Portfolio</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 다크모드 토글 버튼 (nav 밖) -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <svg
         width="20"
@@ -44,130 +65,60 @@
       </svg>
     </button>
 
-    <!-- 왼쪽 고정 네비게이션 -->
-    <nav class="side-nav">
-      <div class="title">
-        <a href="#title">2026 Portfolio</a>
-      </div>
-      <ul>
-        <li>
-          <a href="#projects">Projects <sup>01</sup></a>
-        </li>
-        <li>
-          <a href="#about-me">About me <sup>02</sup></a>
-        </li>
-        <li>
-          <a href="#contact">Contact <sup>03</sup></a>
-        </li>
-      </ul>
-      <footer>
-        <p>&copy; 2026 Hyeji-Jang. <br />All rights reserved.</p>
-      </footer>
-    </nav>
-
     <!-- 메인 콘텐츠 -->
     <main class="content">
-      <section id="title">
-        <h1 id="typing"><span id="text"></span><span id="cursor">_</span></h1>
-        <p>© Hyeji-Jang</p>
-      </section>
+      <section id="works">
+        <div class="works-sticky">
+          <!-- 좌측: 히어로 타이틀 영역 -->
+          <div class="works-hero">
+            <h1 id="typing">
+              <span id="text"></span><span id="cursor">_</span>
+            </h1>
+            <p class="hero-copy">
+              © 2026 Hyeji-Jang Portfolio. All rights reserved.
+            </p>
+          </div>
 
-      <section id="projects" class="reveal">
-        <div class="sub-title">
-          <h2>
-            Projects
-            <sup>01</sup>
-          </h2>
+          <!-- 우측: 타이틀 + 카드 컨테이너 -->
+          <div class="works-right">
+            <div class="sub-title works-heading">
+              <h2>
+                Works
+                <sup>01</sup>
+              </h2>
+            </div>
+            <div class="works-cards">
+              <div class="works-cards-inner">
+                <a href="./image/datamenity.png" class="work-thumb">
+                  <div class="thumb-datamenity"></div>
+                  <div class="card-caption">
+                    <p class="card-en">Datamenity Redesign</p>
+                    <p class="card-ko">
+                      숙박시설 수익관리 시스템 '데이터메니티' 리디자인
+                    </p>
+                    <span class="card-label">UI/UX</span>
+                  </div>
+                </a>
+                <a href="./image/heyvoca.png" class="work-thumb">
+                  <div class="thumb-heyvoca"></div>
+                  <div class="card-caption">
+                    <p class="card-en">Heyvoca App Design</p>
+                    <p class="card-ko">영단어 암기 앱 '헤이보카' 디자인</p>
+                    <span class="card-label">UI/UX</span>
+                  </div>
+                </a>
+                <a href="./image/heroworks.png" class="work-thumb">
+                  <div class="thumb-heroworks"></div>
+                  <div class="card-caption">
+                    <p class="card-en">Heroworks Redesign</p>
+                    <p class="card-ko">'히어로웍스' 웹사이트 리디자인</p>
+                    <span class="card-label">Web</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="project-grid">
-          <a href="./image/datamenity2.png" class="project-thumb">
-            <span class="folder-label">UI/UX</span>
-            <div class="thumb-datamenity"></div>
-            <p>
-              숙박시설 수익관리 시스템 '데이터메니티' 리디자인
-              <svg
-                class="arrow-icon"
-                width="16"
-                height="16"
-                viewBox="-4 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <line x1="-2" y1="12" x2="18" y2="12"></line>
-                <line x1="18" y1="12" x2="15" y2="8"></line>
-                <line x1="18" y1="12" x2="15" y2="16"></line>
-              </svg>
-            </p>
-          </a>
-          <a href="./image/heroworks.png" class="project-thumb">
-            <span class="folder-label">Web</span>
-            <div class="thumb-heroworks"></div>
-            <p>
-              '히어로웍스' 웹사이트 리디자인
-              <svg
-                class="arrow-icon"
-                width="16"
-                height="16"
-                viewBox="-4 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <line x1="-2" y1="12" x2="18" y2="12"></line>
-                <line x1="18" y1="12" x2="15" y2="8"></line>
-                <line x1="18" y1="12" x2="15" y2="16"></line>
-              </svg>
-            </p>
-          </a>
-          <a href="" class="project-thumb">
-            <span class="folder-label">UI/UX</span>
-            <div class="thumb-heyvoca soon"></div>
-            <p>
-              영단어 암기 앱 '헤이보카' 디자인
-              <svg
-                class="arrow-icon"
-                width="16"
-                height="16"
-                viewBox="-4 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <line x1="-2" y1="12" x2="18" y2="12"></line>
-                <line x1="18" y1="12" x2="15" y2="8"></line>
-                <line x1="18" y1="12" x2="15" y2="16"></line>
-              </svg>
-            </p>
-          </a>
-          <!--a href="" class="project-thumb">
-            <div class="thumb-datamenity soon"></div>
-            <p>
-              리비 (Revie)
-              <svg
-                class="arrow-icon"
-                width="16"
-                height="16"
-                viewBox="-4 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <line x1="-2" y1="12" x2="18" y2="12"></line>
-                <line x1="18" y1="12" x2="15" y2="8"></line>
-                <line x1="18" y1="12" x2="15" y2="16"></line>
-              </svg>
-            </p>
-          </a>
-        </div-->
       </section>
 
       <section id="about-me" class="reveal">
@@ -188,17 +139,6 @@
                   1996. 10. 22<br />
                   hyejii1022@naver.com
                 </p>
-
-                <!--a href="mailto:hyejii1022@naver.com" class="e-mail-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
-                        ></path>
-                      </svg>
-                    </a-->
               </div>
             </div>
           </div>
@@ -305,10 +245,7 @@
                   >
                     <p>Notion</p>
                     <div class="gauge-bar">
-                      <div
-                        class="gauge-fill"
-                        style="background-color: #7fe4b0"
-                      ></div>
+                      <div class="gauge-fill"></div>
                     </div>
                   </div>
                 </li>
@@ -321,10 +258,7 @@
                   >
                     <p>HTML5</p>
                     <div class="gauge-bar">
-                      <div
-                        class="gauge-fill"
-                        style="background-color: #51da93"
-                      ></div>
+                      <div class="gauge-fill"></div>
                     </div>
                   </div>
                 </li>
@@ -337,10 +271,7 @@
                   >
                     <p>CSS3</p>
                     <div class="gauge-bar">
-                      <div
-                        class="gauge-fill"
-                        style="background-color: #51da93"
-                      ></div>
+                      <div class="gauge-fill"></div>
                     </div>
                   </div>
                 </li>
@@ -357,10 +288,6 @@
               Thank you<br />
               for watching!
             </div>
-            <!--div class="social-links">
-              <a href="#" class="social-link">Linkedin</a>
-              <a href="#" class="social-link">Instagram</a>
-            </div-->
           </div>
 
           <div class="contact-form">
@@ -392,8 +319,20 @@
                 <textarea name="message" rows="5" required></textarea>
               </div>
               <button type="submit" class="send-button">
-                <svg class="mail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <svg
+                  class="mail-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
                 Send
@@ -415,19 +354,11 @@
       </div>
     </div>
 
-    <!-- Resolution Notice Modal -->
-    <div class="resolution-modal" id="resolutionModal">
-      <div class="resolution-modal-content">
-        <p>이 웹사이트는 1920×1080 해상도에 <br>최적화되어 있습니다.</p>
-        <button class="resolution-modal-close" id="resolutionModalClose" aria-label="close">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="4" x2="12" y2="12"></line>
-            <line x1="12" y1="4" x2="4" y2="12"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-
     <script src="./js/script.js"></script>
+
+    <footer>
+      <span>© 2026 Hyeji-Jang. All rights reserved.</span>
+      <span>UI/UX Designer · hyejii1022@naver.com</span>
+    </footer>
   </body>
 </html>
