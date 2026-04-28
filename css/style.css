@@ -30,6 +30,31 @@
   --ink: #eaeaea;
 }
 
+[data-theme="dark"] body {
+  background: linear-gradient(150deg, #1a1a1a 0%, #0d0d0d 100%) fixed;
+}
+
+[data-theme="dark"] .top-nav {
+  background: linear-gradient(150deg, #1a1a1a 0%, #0d0d0d 100%) fixed;
+}
+
+[data-theme="dark"] .card-caption .card-ko {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .card-caption .card-en {
+  color: var(--text-quaternary);
+}
+
+[data-theme="dark"] .card-caption .card-label {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+html {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -254,7 +279,7 @@ ol {
 .content > *:not(#works) {
   width: 100%;
   max-width: var(--content-max);
-  padding: 10rem 4rem 10rem;
+  padding: clamp(4rem, 8vw, 10rem) clamp(1.5rem, 4vw, 4rem);
 }
 
 /* 컨텐츠 좌/우 블랙 라인 */
@@ -293,6 +318,8 @@ ol {
    ===================== */
 #works {
   width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
   height: 340vh;
   position: relative;
   border-left: 1px solid var(--ink);
@@ -988,7 +1015,7 @@ footer {
   font-family: "Raleway", sans-serif;
   font-size: 0.82rem;
   color: var(--text-quaternary);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 4rem;
   border-top: 1px solid var(--border-color);
   margin-top: auto;
   margin-left: auto;
@@ -1029,21 +1056,30 @@ footer {
 /* =====================
    반응형
    ===================== */
+
+/* ─── 1200px: 큰 노트북 ─── */
 @media screen and (max-width: 1200px) {
   .works-hero {
     flex: 0 0 45%;
   }
 
   .works-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5.5rem);
+  }
+
+  .contact-email-large {
+    font-size: clamp(2.8rem, 4vw, 4.5rem);
   }
 }
 
+/* ─── 1024px: 태블릿 가로 / 작은 노트북 ─── */
 @media screen and (max-width: 1024px) {
+  /* 섹션 패딩 축소 */
   .content > *:not(#works) {
-    padding: var(--top-nav-height) 2rem 2.5rem;
+    padding: 5rem 2.5rem 5rem;
   }
 
+  /* 네비게이션 */
   .top-nav-inner {
     padding: 0 2rem;
     gap: 1.2rem;
@@ -1059,63 +1095,9 @@ footer {
     right: 1.2rem;
   }
 
-  .works-sticky {
-    flex-direction: column;
-  }
-
-  .works-hero {
-    flex: 0 0 auto;
-    border-right: none;
-    border-bottom: 1px solid var(--ink);
-    padding: 2rem;
-  }
-
-  .works-right {
-    flex: 1;
-  }
-
-  .works-heading {
-    padding: 1.5rem 2rem 1rem;
-  }
-
-  .works-cards {
-    padding: 1rem 2rem 2rem;
-  }
-
-  .contact-wrap {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  :root {
-    --top-nav-height: 64px;
-  }
-
-  body {
-    flex-direction: column;
-  }
-
-  .top-nav-inner {
-    padding: 0 1.5rem;
-  }
-
-  .theme-toggle {
-    right: 1rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
+  /* Works — 스크롤 효과 해제, 세로 스택으로 전환 */
   #works {
-    height: auto;
-    min-height: 100vh;
+    height: auto !important;
   }
 
   .works-sticky {
@@ -1123,18 +1105,37 @@ footer {
     top: 0;
     height: auto;
     flex-direction: column;
+    overflow: visible;
+  }
+
+  .works-hero {
+    flex: 0 0 auto;
+    border-right: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 3rem 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .works-hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+  }
+
+  .works-right {
+    flex: 1;
+    overflow: visible;
   }
 
   .works-heading {
+    position: relative;
+    padding: 1.8rem 2.5rem 1rem;
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
   }
 
-  /* 모바일: 컬럼 스크롤 비활성화, 세로 나열로 복원 */
   .works-cards {
     overflow: visible;
-    padding: 1rem 0 2rem;
+    padding: 0 2.5rem 3rem;
   }
 
   .works-cards-inner {
@@ -1142,11 +1143,125 @@ footer {
     top: auto;
     left: auto;
     right: auto;
-    display: flex;
-    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0;
+    transform: none !important;
+  }
+
+  .work-thumb {
+    flex: 0 0 auto !important;
+    height: 360px !important;
+    width: min(460px, 100%) !important;
+    margin: 0 auto !important;
+  }
+
+  /* About Me */
+  .aboutme-wrap {
+    flex-wrap: wrap;
     gap: 2rem;
+  }
+
+  .profile-img {
+    width: clamp(180px, 28%, 260px);
+  }
+
+  .profile-cont ul li {
+    gap: 2rem;
+  }
+
+  /* Contact */
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-email-large {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+/* ─── 768px: 태블릿 세로 / 모바일 가로 ─── */
+@media screen and (max-width: 768px) {
+  :root {
+    --top-nav-height: 48px;
+  }
+
+  /* 섹션 패딩 */
+  .content > *:not(#works) {
+    padding: 4rem 1.5rem 4rem;
+  }
+
+  /* 네비게이션 */
+  .top-nav-inner {
+    padding: 0 1.5rem;
+    gap: 1rem;
+  }
+
+  .top-nav-links a {
+    font-size: 0.82rem;
+    padding: 3px 10px;
+  }
+
+  .theme-toggle {
+    right: 1rem;
+    bottom: 1.2rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 타이포그래피 */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  /* Works */
+  #works {
+    height: auto !important;
+    min-height: auto;
+  }
+
+  .works-sticky {
+    position: relative;
+    top: 0;
+    height: auto;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .works-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .works-hero h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    min-height: auto;
+  }
+
+  .works-heading {
+    position: relative;
+    padding: 1.5rem 1.5rem 0.8rem;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .works-cards {
+    overflow: visible;
+    padding: 0 1.5rem 2.5rem;
+  }
+
+  .works-cards-inner {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    gap: 2rem;
+    padding: 0;
     align-items: center;
-    padding: 0 1rem;
     transform: none !important;
   }
 
@@ -1154,8 +1269,166 @@ footer {
     flex: 0 0 auto !important;
     height: auto !important;
     min-height: 280px;
-    width: calc(100% - 2rem) !important;
+    width: 100% !important;
     margin: 0 !important;
     transform: none !important;
+  }
+
+  .work-thumb:nth-child(1),
+  .work-thumb:nth-child(2),
+  .work-thumb:nth-child(3) {
+    transform: none !important;
+  }
+
+  .work-thumb:nth-child(1):hover,
+  .work-thumb:nth-child(2):hover,
+  .work-thumb:nth-child(3):hover {
+    transform: scale(1.01) !important;
+  }
+
+  /* About Me */
+  .aboutme-wrap {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .profile-img {
+    width: 100%;
+    max-width: 320px;
+    align-self: flex-start;
+  }
+
+  .profile-cont {
+    width: 100%;
+  }
+
+  .profile-cont ul li {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .card-ko {
+    white-space: normal;
+  }
+
+  .profile-cont .skills ul li .gauge-container {
+    width: 100%;
+    flex: 1;
+  }
+
+  /* Contact */
+  .contact-email-large {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    line-height: 1.2;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+/* ─── 480px: 소형 모바일 ─── */
+@media screen and (max-width: 480px) {
+  :root {
+    --top-nav-height: 44px;
+  }
+
+  /* 섹션 패딩 */
+  .content > *:not(#works) {
+    padding: 3rem 1.2rem 3rem;
+  }
+
+  /* 네비게이션 — 타이틀 숨김으로 링크 공간 확보 */
+  .top-nav-inner {
+    padding: 0 1rem;
+  }
+
+  .top-nav-title {
+    display: none;
+  }
+
+  .top-nav-links {
+    gap: 0.5rem;
+  }
+
+  .top-nav-links a {
+    font-size: 0.78rem;
+    padding: 2px 8px;
+  }
+
+  .theme-toggle {
+    right: 0.8rem;
+    bottom: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  /* 타이포그래피 */
+  h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  /* Works */
+  .works-hero {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .works-heading {
+    padding: 1.2rem 1.2rem 0.6rem;
+  }
+
+  .works-cards {
+    padding: 0 1.2rem 2rem;
+  }
+
+  .work-thumb {
+    min-height: 240px;
+  }
+
+  .card-caption {
+    padding: 0.8rem 1rem;
+  }
+
+  .card-ko {
+    font-size: 0.88rem;
+    white-space: normal;
+  }
+
+  /* About Me */
+  .profile-img {
+    max-width: 100%;
+  }
+
+  .profile-cont ul li {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+  }
+
+  .profile-cont ul li .period {
+    font-size: 0.8rem;
+  }
+
+  .profile-cont .skills ul li {
+    gap: 0.8rem;
+  }
+
+  /* Contact */
+  .contact-email-large {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .contact-wrap {
+    gap: 2rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.76rem;
+    padding: 1rem 1.2rem;
   }
 }

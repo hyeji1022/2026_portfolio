@@ -234,9 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
       !worksSection ||
       !worksCardsInner ||
       !worksCardsContainer ||
-      window.innerWidth <= 768
+      window.innerWidth <= 1024
     ) {
       if (worksSection) worksSection.style.height = "auto";
+      if (worksCardsInner) worksCardsInner.style.transform = "none";
       return;
     }
 
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function onScroll() {
-    if (!worksSection || !worksCardsInner || window.innerWidth <= 768) return;
+    if (!worksSection || !worksCardsInner || window.innerWidth <= 1024) return;
     const scrolledPastTop = -worksSection.getBoundingClientRect().top;
 
     // 스크롤 상한선을 동적으로 계산된 SCROLL_MAX로 제한
