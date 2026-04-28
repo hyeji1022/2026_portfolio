@@ -227,7 +227,7 @@ ol {
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--ink);
-  background: transparent;
+  background: var(--bg-primary);
   color: var(--ink);
   cursor: pointer;
   display: flex;
@@ -322,8 +322,6 @@ ol {
   margin: 0 auto;
   height: 340vh;
   position: relative;
-  border-left: 1px solid var(--ink);
-  border-right: 1px solid var(--ink);
 }
 
 .works-sticky {
