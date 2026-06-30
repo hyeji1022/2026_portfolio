@@ -1,353 +1,384 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>llolx 2026 Portfolio</title>
+    <title>2026 Portfolio — Jang Hyeji</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Raleway:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
     <!-- 상단 네비게이션 -->
-    <nav class="top-nav" aria-label="Primary">
+    <!--nav class="top-nav" aria-label="Primary">
       <div class="top-nav-inner">
         <ul class="top-nav-links">
           <li>
-            <a href="#works">Works <sup>01</sup></a>
+            <a href="#works">
+              <span class="nav-num">(01)</span>
+              <span class="nav-name">WORKS</span>
+            </a>
           </li>
           <li>
-            <a href="#about-me">About me <sup>02</sup></a>
-          </li>
-          <li>
-            <a href="#contact">Contact <sup>03</sup></a>
+            <a href="#about-me">
+              <span class="nav-num">(02)</span>
+              <span class="nav-name">ABOUT ME</span>
+            </a>
           </li>
         </ul>
+      </div>
+    </nav-->
 
-        <div class="top-nav-title">
-          <a href="#works">2026 Portfolio</a>
+    <!-- 1. 히어로 섹션 -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-img"></div>
+      <div class="hero-gradient"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-year">2026</span>
+          <span class="hero-main"
+            >PORTF(<span class="portf-ticker-wrap"
+              ><span class="portf-ticker"
+                ><span>UX/UI</span><span>GRAPHIC</span><span>WEB</span></span
+              ></span
+            >)LIO</span
+          >
+        </h1>
+      </div>
+      <div class="hero-footer-bar">
+        <div class="hero-info-row">
+          <div class="hero-info-item">
+            <span class="info-label">( E-MAIL )</span>
+            <span class="info-value">hyejii1022@naver.com</span>
+          </div>
+          <div class="hero-info-item">
+            <span class="info-label">( DESIGNER )</span>
+            <span class="info-value">JANG HYE JI</span>
+          </div>
+          <div class="hero-info-item">
+            <span class="info-value">UX/UI</span>
+            <span class="info-value">GRAPHIC</span>
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <!-- 다크모드 토글 버튼 (nav 밖) -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <!-- Moon icon (light mode) -->
-        <path
-          d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-          class="moon-icon"
-        />
-        <!-- Sun icon (dark mode) -->
-        <circle cx="12" cy="12" r="5" class="sun-icon" />
-        <line x1="12" y1="1" x2="12" y2="3" class="sun-icon" />
-        <line x1="12" y1="21" x2="12" y2="23" class="sun-icon" />
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" class="sun-icon" />
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" class="sun-icon" />
-        <line x1="1" y1="12" x2="3" y2="12" class="sun-icon" />
-        <line x1="21" y1="12" x2="23" y2="12" class="sun-icon" />
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" class="sun-icon" />
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" class="sun-icon" />
-      </svg>
-    </button>
-
-    <!-- 메인 콘텐츠 -->
-    <main class="content">
-      <section id="works">
-        <div class="works-sticky">
-          <!-- 좌측: 히어로 타이틀 영역 -->
-          <div class="works-hero">
-            <h1 id="typing">
-              <span id="text"></span><span id="cursor">_</span>
-            </h1>
-            <p class="hero-copy">
-              © 2026 Hyeji-Jang Portfolio. All rights reserved.
-            </p>
-          </div>
-
-          <!-- 우측: 타이틀 + 카드 컨테이너 -->
-          <div class="works-right">
-            <div class="sub-title works-heading">
-              <h2>
-                Works
-                <sup>01</sup>
-              </h2>
-            </div>
-            <div class="works-cards">
-              <div class="works-cards-inner">
-                <a href="./image/datamenity.png" class="work-thumb">
-                  <div class="thumb-datamenity"></div>
-                  <div class="card-caption">
-                    <p class="card-en">Datamenity Redesign</p>
-                    <p class="card-ko">
-                      숙박시설 수익관리 시스템 '데이터메니티' 리디자인
-                    </p>
-                    <span class="card-label">UI/UX</span>
-                  </div>
-                </a>
-                <a href="./image/heyvoca.png" class="work-thumb">
-                  <div class="thumb-heyvoca"></div>
-                  <div class="card-caption">
-                    <p class="card-en">Heyvoca App Design</p>
-                    <p class="card-ko">영단어 암기 앱 '헤이보카' 디자인</p>
-                    <span class="card-label">UI/UX</span>
-                  </div>
-                </a>
-                <a href="./image/heroworks.png" class="work-thumb">
-                  <div class="thumb-heroworks"></div>
-                  <div class="card-caption">
-                    <p class="card-en">Heroworks Redesign</p>
-                    <p class="card-ko">'히어로웍스' 웹사이트 리디자인</p>
-                    <span class="card-label">Web</span>
-                  </div>
-                </a>
+    <!-- 2. Works 섹션 -->
+    <section class="works-section" id="works">
+      <div class="section-inner">
+        <div class="section-label">
+          <p class="section-num">( 01 )</p>
+          <p class="section-name">WORKS</p>
+        </div>
+        <div class="works-grid">
+          <!-- 카드 1 -->
+          <a href="./image/datamenity.png" class="work-card">
+            <div
+              class="work-thumb"
+              style="
+                background-image: url(&quot;./image/thumb_datamenity.png&quot;);
+              "
+            ></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+                <span class="tag">B2B</span>
+                <span class="tag">Solution</span>
               </div>
+              <p class="work-title">데이터메니티 - 숙박시설 수익 관리 시스템</p>
+            </div>
+          </a>
+          <!-- 카드 2 -->
+          <a href="./image/heyvoca.png" class="work-card">
+            <div
+              class="work-thumb"
+              style="
+                background-image: url(&quot;./image/thumb_heyvoca.png&quot;);
+              "
+            ></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+                <span class="tag">B2C</span>
+                <span class="tag">App</span>
+              </div>
+              <p class="work-title">헤이보카 - 영단어 암기 학습 앱</p>
+            </div>
+          </a>
+          <!-- 카드 3 -->
+          <a href="./image/heroworks.png" class="work-card">
+            <div
+              class="work-thumb"
+              style="
+                background-image: url(&quot;./image/thumb_heroworks.png&quot;);
+              "
+            ></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+                <span class="tag">Web</span>
+              </div>
+              <p class="work-title">히어로웍스 웹사이트 리디자인</p>
+            </div>
+          </a>
+          <!-- 카드 4 -->
+          <div class="work-card work-card--soon">
+            <div class="work-thumb work-thumb--soon"></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+              </div>
+              <p class="work-title">Coming Soon</p>
+            </div>
+          </div>
+          <!-- 카드 5 -->
+          <div class="work-card work-card--soon">
+            <div class="work-thumb work-thumb--soon"></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+              </div>
+              <p class="work-title">Coming Soon</p>
+            </div>
+          </div>
+          <!-- 카드 6 -->
+          <div class="work-card work-card--soon">
+            <div class="work-thumb work-thumb--soon"></div>
+            <div class="work-meta">
+              <div class="work-tags">
+                <span class="tag">UX/UI</span>
+              </div>
+              <p class="work-title">Coming Soon</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="about-me" class="reveal">
-        <div class="sub-title">
-          <h2>
-            About me
-            <sup>02</sup>
-          </h2>
+    <!-- 3. About Me 섹션 -->
+    <section class="about-section" id="about-me">
+      <div class="section-inner">
+        <div class="section-label">
+          <p class="section-num">( 02 )</p>
+          <p class="section-name">ABOUT ME</p>
         </div>
-        <div class="aboutme-wrap">
-          <div class="profile-img">
-            <img src="./image/profile2.png" alt="profile image" />
-            <div class="profile">
-              <p>장혜지</p>
-              <div class="profile-text">
-                <p>
-                  Jang Hyeji<br />
-                  1996. 10. 22<br />
-                  hyejii1022@naver.com
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="profile-cont">
-            <div class="experience">
-              <h3>Experience</h3>
-              <ul>
-                <li>
-                  <p>㈜히어로웍스 개발팀 UX/UI 디자이너</p>
-                  <p class="period">2023. 01 - 2025. 06</p>
-                </li>
-                <li>
-                  <p>㈜픽스 디자인팀 웹 디자이너</p>
-                  <p class="period">2020. 11 - 2022. 08</p>
-                </li>
-              </ul>
-            </div>
-            <div class="education">
-              <h3>Education</h3>
-              <ul>
-                <li>
-                  <p>동의대학교 산업디자인학과 졸업</p>
-                  <p class="period">2015. 03 - 2020. 02</p>
-                </li>
-                <li>
-                  <p>브니엘예술고등학교 졸업</p>
-                  <p class="period">2013. 03 - 2015. 02</p>
-                </li>
-              </ul>
-            </div>
-            <div class="certification">
-              <h3>Certification</h3>
-              <ul>
-                <li>
-                  <p>웹디자인기능사</p>
-                  <p class="period">2020. 09</p>
-                </li>
-                <li>
-                  <p>컴퓨터그래픽스운용기능사</p>
-                  <p class="period">2020. 07</p>
-                </li>
-                <li>
-                  <p>2종보통운전면허</p>
-                  <p class="period">2020. 07</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="profile-cont">
-            <div class="skills">
-              <h3>Skills</h3>
-              <ul>
-                <li>
-                  <img
-                    src="./image/photoshop.png"
-                    alt="Adobe Photoshop 아이콘"
-                  />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="90%"
-                  >
-                    <p>Adobe Photoshop</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="./image/illustrator.png"
-                    alt="Adobe illustrator 아이콘"
-                  />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="85%"
-                  >
-                    <p>Adobe Illustrator</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./image/figma.png" alt="figma 아이콘" />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="90%"
-                  >
-                    <p>Figma</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./image/notion.png" alt="notion 아이콘" />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="70%"
-                  >
-                    <p>Notion</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./image/html.png" alt="html 아이콘" />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="80%"
-                  >
-                    <p>HTML5</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./image/css.png" alt="css 아이콘" />
-                  <div
-                    class="gauge-container"
-                    id="gaugeContainer"
-                    data-percent="80%"
-                  >
-                    <p>CSS3</p>
-                    <div class="gauge-bar">
-                      <div class="gauge-fill"></div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="reveal">
-        <div class="contact-wrap">
-          <div class="contact-info">
-            <div class="contact-email-large">
-              Thank you<br />
-              for watching!
+        <div class="about-content">
+          <!-- 좌측: 프로필 -->
+          <div class="profile-col">
+            <h3 class="col-heading">( PROFILE )</h3>
+            <img
+              src="./image/profile5.png"
+              alt="장혜지 프로필"
+              class="profile-photo"
+            />
+            <div class="profile-info">
+              <p class="profile-name">장 혜 지</p>
+              <p class="profile-detail">
+                1996. 10 .22<br />hyejii1022@naver.com
+              </p>
             </div>
           </div>
 
-          <div class="contact-form">
-            <div class="sub-title">
-              <h2>
-                Contact
-                <sup>03</sup>
-              </h2>
+          <!-- 우측: 상세 정보 -->
+          <div class="details-col">
+            <!-- Experience -->
+            <div class="detail-group">
+              <h3 class="col-heading">( EXPERIENCE )</h3>
+              <ul class="detail-list">
+                <li class="detail-row">
+                  <span class="detail-text"
+                    >㈜히어로웍스 개발팀 UX/UI 디자이너</span
+                  >
+                  <span class="detail-period">2023. 01 - 2025. 06</span>
+                </li>
+                <li class="detail-row">
+                  <span class="detail-text">㈜픽스 디자인팀 웹 디자이너</span>
+                  <span class="detail-period">2020. 11 - 2022. 08</span>
+                </li>
+              </ul>
             </div>
-            <form id="contactForm">
-              <div class="form-field">
-                <label>Name</label>
-                <input type="text" name="name" required />
-              </div>
-              <div class="form-field">
-                <label>Email</label>
-                <input type="email" name="email" required />
-              </div>
-              <div class="form-field">
-                <label>Phone</label>
-                <input type="tel" name="phone" />
-              </div>
-              <div class="form-field">
-                <label>Subject</label>
-                <input type="text" name="subject" required />
-              </div>
-              <div class="form-field">
-                <label>Message</label>
-                <textarea name="message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="send-button">
-                <svg
-                  class="mail-icon"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  ></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                Send
-              </button>
-            </form>
+
+            <!-- Education -->
+            <div class="detail-group">
+              <h3 class="col-heading">( Education )</h3>
+              <ul class="detail-list">
+                <li class="detail-row">
+                  <span class="detail-text"
+                    >동의대학교 산업디자인학과 졸업</span
+                  >
+                  <span class="detail-period">2015. 03 - 2020. 02</span>
+                </li>
+                <li class="detail-row">
+                  <span class="detail-text">브니엘예술고등학교 졸업</span>
+                  <span class="detail-period">2013. 03 - 2015. 02</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Certification -->
+            <div class="detail-group">
+              <h3 class="col-heading">( Certification )</h3>
+              <ul class="detail-list">
+                <li class="detail-row">
+                  <span class="detail-text">웹디자인기능사</span>
+                  <span class="detail-period">2020. 09</span>
+                </li>
+                <li class="detail-row">
+                  <span class="detail-text">컴퓨터그래픽스운용기능사</span>
+                  <span class="detail-period">2020. 07</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Skills -->
+            <div class="detail-group">
+              <h3 class="col-heading">( skills )</h3>
+              <ul class="skills-list">
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/figma.png"
+                      alt="Figma"
+                      class="skill-icon"
+                    />
+                    <span>Figma</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/photoshop.png"
+                      alt="Adobe Photoshop"
+                      class="skill-icon"
+                    />
+                    <span>Adobe Photoshop</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/illustrator.png"
+                      alt="Adobe Illustrator"
+                      class="skill-icon"
+                    />
+                    <span>Adobe Illustrator</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/html.png"
+                      alt="HTML5"
+                      class="skill-icon"
+                    />
+                    <span>HTML5</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img src="./image/css.png" alt="CSS3" class="skill-icon" />
+                    <span>CSS3</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/powerpoint.png"
+                      alt="Powerpoint"
+                      class="skill-icon"
+                    />
+                    <span>Powerpoint</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+                <li class="skill-row">
+                  <div class="skill-name">
+                    <img
+                      src="./image/notion.png"
+                      alt="Notion"
+                      class="skill-icon"
+                    />
+                    <span>Notion</span>
+                  </div>
+                  <div class="skill-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- Modal -->
+    <!-- 4. 푸터 섹션 -->
+    <section class="footer-section">
+      <div class="footer-bg-img"></div>
+      <div class="footer-gradient"></div>
+      <div class="footer-content">
+        <h2 class="footer-title">Thank you<br />For watching!</h2>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Hyeji-Jang Portfolio. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이미지 모달 -->
     <div class="image-modal" id="imageModal">
       <div class="modal-overlay"></div>
-
       <div class="modal-content">
         <button class="modal-back" aria-label="close">Back</button>
         <div class="loader"></div>
@@ -356,10 +387,5 @@
     </div>
 
     <script src="./js/script.js"></script>
-
-    <footer>
-      <span>이 웹사이트는 1920x1080 해상도에 최적화되어 있습니다.</span>
-      <span>UI/UX Designer · hyejii1022@naver.com</span>
-    </footer>
   </body>
 </html>
