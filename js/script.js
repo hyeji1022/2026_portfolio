@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const advance = () => {
         current++;
-        ticker.style.transition = "transform 0.65s cubic-bezier(0.76, 0, 0.24, 1)";
+        ticker.style.transition =
+          "transform 0.65s cubic-bezier(0.76, 0, 0.24, 1)";
         ticker.style.transform = `translateY(${-current * itemH}px)`;
 
         // 마지막(복제) 도달 시 트랜지션 없이 첫 항목으로 점프
@@ -44,24 +45,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("imageModal");
 
   if (modal) {
-    const modalImg = modal.querySelector("img");
-    const overlay = modal.querySelector(".modal-overlay");
-    const loader = modal.querySelector(".loader");
-    const backBtn = modal.querySelector(".modal-back");
+    const modalImg  = modal.querySelector("img");
+    const modalPdf  = modal.querySelector(".modal-pdf");
+    const overlay   = modal.querySelector(".modal-overlay");
+    const loader    = modal.querySelector(".loader");
+    const backBtn   = modal.querySelector(".modal-back");
+
+    function openModal(href) {
+      const isPdf = href.toLowerCase().endsWith(".pdf");
+
+      modal.classList.add("active");
+
+      // 둘 다 숨기고 시작
+      if (modalImg) { modalImg.style.display = "none"; modalImg.src = ""; }
+      if (modalPdf) { modalPdf.style.display = "none"; modalPdf.src = ""; }
+      if (loader)   loader.style.display = "block";
+
+      if (isPdf) {
+        // PDF → iframe
+        if (loader) loader.style.display = "none";
+        if (modalPdf) {
+          modalPdf.src = href;
+          modalPdf.style.display = "block";
+        }
+      } else {
+        // 이미지 → img 태그
+        if (modalImg) {
+          modalImg.src = href;
+        }
+      }
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      setTimeout(() => {
+        if (modalImg) { modalImg.src = ""; modalImg.style.display = "none"; }
+        if (modalPdf) { modalPdf.src = ""; modalPdf.style.display = "none"; }
+      }, 300);
+    }
 
     document.querySelectorAll("a.work-card").forEach((card) => {
       card.addEventListener("click", (e) => {
+        const href = card.getAttribute("href");
+        if (!href) return;
+
         e.preventDefault();
-
-        const imgSrc = card.getAttribute("href");
-        if (!imgSrc) return;
-
-        modal.classList.add("active");
-        if (loader) loader.style.display = "block";
-        if (modalImg) {
-          modalImg.style.display = "none";
-          modalImg.src = imgSrc;
-        }
+        openModal(href);
       });
     });
 
@@ -72,22 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    function closeModal() {
-      modal.classList.remove("active");
-      setTimeout(() => {
-        if (modalImg) {
-          modalImg.src = "";
-          modalImg.style.display = "none";
-        }
-      }, 300);
-    }
-
     overlay?.addEventListener("click", (e) => {
       if (e.target === overlay) closeModal();
     });
-
     backBtn?.addEventListener("click", closeModal);
-
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
     });
@@ -108,13 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
             navLinks.forEach((link) => {
               link.classList.toggle(
                 "is-active",
-                link.getAttribute("href") === `#${id}`
+                link.getAttribute("href") === `#${id}`,
               );
             });
           }
         });
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 },
     );
 
     sections.forEach((s) => observer.observe(s));
@@ -135,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     cards.forEach((card) => cardObserver.observe(card));
